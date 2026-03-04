@@ -40,11 +40,11 @@ public class ResponseBody {
         this.value = value;
     }
 
-    public boolean isSuccess() {
+    public boolean getIsSuccess() {
         return isSuccess;
     }
 
-    public void setSuccess(boolean success) {
-        isSuccess = success;
+    public void setIsSuccess(boolean isSuccess) {
+        this.isSuccess = isSuccess;
     }
 }

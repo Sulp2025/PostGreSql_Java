@@ -8,7 +8,6 @@ import com.jt.costcenter.dto.response.CostCenterResponse;
 import com.jt.costcenter.exception.BadRequestException;
 import com.jt.costcenter.service.CostCenterService;
 import java.time.LocalDate;
-import java.time.format.DateTimeParseException;
 import java.util.Optional;
 import java.util.Map;
 
@@ -54,14 +53,15 @@ public class CostCenterController {
 
         LocalDate txDate;
         try {
-            String datePart = transactionDateRaw.length() >= 10
-                    ? transactionDateRaw.substring(0, 10)
-                    : transactionDateRaw;
+            txDate = extensionOpt
+                    .map(ext -> ext.getTransactionLocalDate())
+                    .orElse(null);
+        } catch (IllegalArgumentException e) {
+            throw new BadRequestException(e.getMessage());
+        }
 
-            txDate = LocalDate.parse(datePart);
-        } catch (DateTimeParseException e) {
-            throw new BadRequestException(
-                    "Invalid TransactionDate format, expected YYYY-MM-DD. Input: " + transactionDateRaw);
+        if (txDate == null) {
+            throw new BadRequestException("Missing TransactionDate");
         }
 
         CostCenterResponse res = service.getCostCenters(companyCode, txDate);

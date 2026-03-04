@@ -1,7 +1,10 @@
 package com.jt.costcenter.dto.request;
 
+import java.time.LocalDate;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.jt.costcenter.util.TransactionDateUtil;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Extensions {
@@ -28,7 +31,11 @@ public class Extensions {
         this.transactionDate = transactionDate;
     }
 
-    // public String pickTransactionDate() {
-    //     return transactionDate;
-    // }
+    public String pickTransactionDate() {
+        return transactionDate;
+    }
+
+    public LocalDate getTransactionLocalDate() {
+        return TransactionDateUtil.parseFlexible(pickTransactionDate());
+    }
 }

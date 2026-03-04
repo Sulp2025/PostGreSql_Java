@@ -1,0 +1,23 @@
+---
+applications:
+  - name: pquzsuba06
+    memory: 512M
+    disk_quota: 1G
+    buildpacks:
+      - sap_java_buildpack_jakarta
+    path: target/summary-1.0.0.jar
+    routes:
+      - route: pquzsuba06.cfapps.ap21.hana.ondemand.com
+
+    services:
+      - PostgreSQL_DB
+
+    env:
+      SPRING_PROFILES_ACTIVE: cf8
+      TARGET_RUNTIME: tomcat
+      JBP_CONFIG_COMPONENTS: "jres: [com.sap.xs.java.buildpack.jdk.SAPMachineJDK]"
+      JBP_CONFIG_SAP_MACHINE_JDK: "{ version: 21.+ }"
+
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres-1223f728-98ae-4fa6-8845-3ac12662116e.postgres.database.azure.com:5432/XFsytwJXmFYW?sslmode=require"
+      SPRING_DATASOURCE_USERNAME: "bc5a254ed5fd"
+      SPRING_DATASOURCE_PASSWORD: "b32eda921d88ff508f69"

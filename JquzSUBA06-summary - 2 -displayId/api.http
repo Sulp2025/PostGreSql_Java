@@ -1,0 +1,189 @@
+# 国内（必须带 categoryLevel2）：
+POST http://127.0.0.1:3000/summary1
+Content-Type: application/json
+
+{
+  "requestBody": {
+    "case": {
+      "categoryLevel1": {
+        "name": "国内"
+      },
+      "extensions": {
+        "TransactionDate": "2025-11-18"
+      },
+      "categoryLevel2": {
+        "name": "会議費"
+      },
+      "caseType": "ZFOR"
+    }
+  }
+}
+
+
+POST http://127.0.0.1:3000/summary1
+Content-Type: application/json
+
+{
+  "requestBody": {
+    "case": {
+      "categoryLevel1": {
+        "name": "海外"
+      },
+      "extensions": {
+        "TransactionDate": "2025-11-18"
+      },
+      "categoryLevel2": {
+        "name": ""
+      },
+      "caseType": "ZFOR"
+    }
+  }
+}
+
+
+POST http://127.0.0.1:3000/summary2
+Content-Type: application/json
+{
+  "requestBody": {
+    "Form": {
+      "F_meisai": [
+        {
+          "F_summary1": "電算費経費"
+        }
+      ]
+    },
+    "case": {
+      "categoryLevel1": {
+        "name": "国内"
+      },
+      "extensions": {
+        "TransactionDate": "2025/11/28"
+      },
+      "categoryLevel2": {
+        "name": "会議費"
+      },
+      "caseType": "ZFOR"
+    }
+  }
+}
+
+POST http://127.0.0.1:3000/summary3
+Content-Type: application/json
+
+
+{
+  "requestBody": {
+    "Form": {
+      "F_meisai": [
+        {
+         "F_summary1": "電算費経費",
+          "F_summary2": "ﾊﾟｿｺﾝ・ﾈｯﾄﾜｰｸ機器等の一時的なレンタル(国内）"
+        }
+      ]
+    },
+    "case": {
+      "categoryLevel1": {
+        "name": "国内"
+      },
+      "extensions": {
+        "TransactionDate": "2025/11/28"
+      },
+      "categoryLevel2": {
+        "name": "会議費"
+      },
+      "caseType": "ZFOR"
+    }
+  }
+}
+
+
+POST http://127.0.0.1:3000/summary4
+Content-Type: application/json
+
+
+{
+  "requestBody": {
+    "Form": {
+      "F_meisai": [
+        {
+         "F_summary1": "電算費経費",
+          "F_summary2": "ﾊﾟｿｺﾝ・ﾈｯﾄﾜｰｸ機器等の一時的なレンタル(国内）",
+          "F_summary3": "利用期間が1ヶ月以内"
+        }
+      ]
+    },
+    "case": {
+      "categoryLevel1": {
+        "name": "国内"
+      },
+      "extensions": {
+        "TransactionDate": "2025/11/28"
+      },
+      "categoryLevel2": {
+        "name": "会議費"
+      },
+      "caseType": "ZFOR"
+    }
+  }
+}
+
+POST http://127.0.0.1:3000/summary5
+Content-Type: application/json
+
+
+{
+  "requestBody": {
+    "Form": {
+      "F_meisai": [
+        {
+         "F_summary1": "電算費経費",
+          "F_summary2": "ﾊﾟｿｺﾝ・ﾈｯﾄﾜｰｸ機器等の一時的なレンタル(国内）",
+          "F_summary3": "利用期間が1ヶ月以内"
+        }
+      ]
+    },
+    "case": {
+      "categoryLevel1": {
+        "name": "国内"
+      },
+      "extensions": {
+        "TransactionDate": "2025/11/28"
+      },
+      "categoryLevel2": {
+        "name": "会議費"
+      },
+      "caseType": "ZFOR"
+    }
+  }
+}
+
+POST http://127.0.0.1:3000/summary6
+Content-Type: application/json
+
+{
+  "requestBody": {
+    "Form": {
+      "F_meisai": [
+        {
+         "F_summary1": "電算費経費",
+          "F_summary2": "ﾊﾟｿｺﾝ・ﾈｯﾄﾜｰｸ機器等の一時的なレンタル(国内）",
+          "F_summary3": "利用期間が1ヶ月以内",
+          "F_summary4": "一管(電算機経費)賃借料IFRS16号リース対象外",
+          "F_summary5": "摘要5"
+        }
+      ]
+    },
+    "case": {
+      "categoryLevel1": {
+        "name": "国内"
+      },
+      "extensions": {
+        "TransactionDate": "2025/11/28"
+      },
+      "categoryLevel2": {
+        "name": "会議費"
+      },
+      "caseType": "ZFOR"
+    }
+  }
+}

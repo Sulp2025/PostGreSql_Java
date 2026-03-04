@@ -1,0 +1,13 @@
+# =========================
+# Profile: local（本地/隧道）
+# =========================
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    # 如果是本机直连本地Postgres，用 5432
+    url: jdbc:postgresql://127.0.0.1:5432/postgres?sslmode=disable
+    # 如果是端口转发（ex. 63306），用这个
+    # url: jdbc:postgresql://127.0.0.1:63306/postgres?sslmode=disable
+    username: postgres
+    password: postgres
+

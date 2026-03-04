@@ -1,0 +1,12 @@
+# =========================
+# Profile: btp（本机直连 Azure Postgres）
+# =========================
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://postgres-1223f728-98ae-4fa6-8845-3ac12662116e.postgres.database.azure.com:5432/XFsytwJXmFYW?sslmode=require
+    username: bc5a254ed5fd
+    password: b32eda921d88ff508f69
+  
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect

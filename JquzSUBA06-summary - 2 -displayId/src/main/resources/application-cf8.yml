@@ -1,0 +1,10 @@
+# =========================
+# Profile: cf8
+# =========================
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://postgres-1223f728-98ae-4fa6-8845-3ac12662116e.postgres.database.azure.com:5432/XFsytwJXmFYW?sslmode=require}
+    username: ${SPRING_DATASOURCE_USERNAME:bc5a254ed5fd}
+    password: ${SPRING_DATASOURCE_PASSWORD:b32eda921d88ff508f69}
+

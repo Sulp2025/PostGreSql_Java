@@ -1,0 +1,125 @@
+---
+server:
+  port: ${PORT:8080}
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  application:
+    name: summary
+  profiles:
+    active: local
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        formatsql: true
+
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: false
+
+logging:
+  level:
+    root: INFO
+    "[com.jt.summary]": INFO
+    "[org.hibernate.SQL]": DEBUG
+    "[org.hibernate.orm.jdbc.bind]": TRACE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,mappings
+  endpoint:
+    mappings:
+      access: unrestricted
+    health:
+      show-details: always
+
+# =========================================================
+# MOD: 全局生效 + 全引号（消除 YAML_SHOULD_ESCAPE）
+# =========================================================
+app:
+  casetypeRules:
+    ZD11:
+      defaultRequireCategory2: true
+      # category1Overrides: {}
+      category1Mappings:
+        - name: 国内
+          displayId: Z21000000
+        - name: 海外
+          displayId: Z22000000
+
+    ZC11:
+      defaultRequireCategory2: true
+      # category1Overrides: {}
+      category1Mappings:
+        - name: 国内
+          displayId: Z31000000
+        - name: 海外
+          displayId: Z32000000
+
+    ZZXA:
+      defaultRequireCategory2: false
+      category1Overrides:
+        Z01010000: true
+        Z02000000: false
+      category1Mappings:
+        - name: 国内
+          displayId: Z01010000
+        - name: 海外
+          displayId: Z02000000
+
+    ZZXD:
+      defaultRequireCategory2: false
+      category1Overrides:
+        Z01010000: true
+        Z02000000: false
+
+    ZZXE:
+      defaultRequireCategory2: false
+      category1Overrides:
+        Z01010000: true
+        Z02000000: false
+
+    ZZXF:
+      defaultRequireCategory2: false
+      category1Overrides:
+        Z01010000: true
+        Z02000000: false
+
+    ZZYA:
+      defaultRequireCategory2: false
+      category1Overrides:
+        Z11000000: false
+        Z12000000: true
+      category1Mappings:
+        - name: 収入金計上
+          displayId: Z11000000
+        - name: 経費の返納
+          displayId: Z12000000
+
+    ZZYD:
+      defaultRequireCategory2: false
+      category1Overrides:
+        Z11000000: false
+        Z12000000: true
+
+    ZZYE:
+      defaultRequireCategory2: false
+      category1Overrides:
+        Z11000000: false
+        Z12000000: true
+
+    ZZYF:
+      defaultRequireCategory2: false
+      category1Overrides:
+        Z11000000: false
+        Z12000000: true

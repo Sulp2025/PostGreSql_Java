@@ -1,0 +1,32 @@
+
+# POST http://127.0.0.1:3000/costcenter
+# Content-Type: application/json
+
+# {
+#   "requestBody": {
+#     "case": {
+#       "extensions": {
+#         "TransactionDate": "2015-08-17",
+#         "CompanyCode": "C280"
+#       }
+#     }
+#   }
+# }
+
+
+
+### costcenter (POST)
+POST https://pquzsuba11.cfapps.ap21.hana.ondemand.com/costcenter
+Content-Type: application/json
+Accept: application/json
+
+{
+  "requestBody": {
+    "case": {
+      "extensions": {
+        "TransactionDate": "2015-08-17",
+        "CompanyCode": "C280"
+      }
+    }
+  }
+}

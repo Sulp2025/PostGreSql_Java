@@ -24,8 +24,6 @@ public class CostCenterRepositoryImpl implements CostCenterRepository {
       rs.getString("costcenter"),
       rs.getString("costcenter_description"));
 
-  @Override
-
   @SuppressWarnings("null")
   public List<CostCenterRow> findValidCostCenters(String companyCode, LocalDate transactionDate) {
 
